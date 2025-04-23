@@ -40,6 +40,8 @@
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "express-validator": "^7.2.1",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.13.2",
     "prettier-eslint": "^16.4.1"
   }
 }

@@ -2,10 +2,16 @@ import express from 'express';
 import errorHandler from './middlewares/errorHandler.moddleware';
 import loggerMiddleware from './middlewares/logger.middleware';
 import config from './config/config';
+import db from './data/database';
 
 const app = express();
 
 app.use(express.json());
+
+db.on('error', console.error.bind(console, 'Connection to MongoDB error:'));
+db.once('open', () => {
+  console.log('✅ Connection to MongoDB is successful');
+});
 
 app.use(loggerMiddleware);
 // app.use('/api/items', itemRoutes);
