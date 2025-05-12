@@ -12,17 +12,17 @@ export interface ILesson {
 
 const LessonSchema = new Schema({
   speaker: {
-    type: Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Speaker',
     required: true
   },
   object: {
-    type: Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Object',
     required: true
   },
   class: {
-    type: Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Class',
     required: true
   },

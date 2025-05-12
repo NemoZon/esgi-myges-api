@@ -1,4 +1,5 @@
 import { model, Schema, Types } from 'mongoose';
+import { IRole } from './role.model';
 
 export interface IUser {
   _id: Types.ObjectId;
@@ -7,12 +8,18 @@ export interface IUser {
   roles: Types.ObjectId[];
 }
 
+export interface IUserPopulated extends Omit<IUser, 'roles'> {
+  roles: IRole[];
+}
+
 const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
     unique: true,
-    trim: true
+    trim: true,
+    match: [/^\S+@\S+\.\S+$/, 'Invalid email format'],
+    lowercase: true
   },
   password: {
     type: String,

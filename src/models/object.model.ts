@@ -3,7 +3,7 @@ import { model, Schema, Types } from 'mongoose';
 export interface IObject {
   _id: Types.ObjectId;
   title: string;
-  logo: string;
+  logo?: string | null;
 }
 
 const ObjectSchema = new Schema({

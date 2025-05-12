@@ -1,4 +1,5 @@
 import { Schema, Types, model } from 'mongoose';
+import { IPermission } from './permission.model';
 
 export const ADMIN = 'Admin';
 export const INVESTOR = 'Investor';
@@ -9,6 +10,10 @@ export interface IRole {
   roleTitle: string;
   permissions: Types.ObjectId[];
 }
+
+export type PopulatedRole = Omit<IRole, 'permissions'> & {
+  permissions: IPermission[];
+};
 
 const RoleSchema = new Schema({
   roleTitle: {

@@ -2,13 +2,20 @@ import { Schema, Types, model } from 'mongoose';
 
 export interface ISpeaker {
   _id: Types.ObjectId;
+  user: Types.ObjectId;
   firstName: string;
   lastName: string;
-  avatar: string;
+  avatar?: string | null;
   objects: Types.ObjectId[];
 }
 
 const SpeakerSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+    unique: true
+  },
   firstName: {
     type: String,
     required: true

@@ -3,18 +3,27 @@ import errorHandler from './middlewares/errorHandler.moddleware';
 import loggerMiddleware from './middlewares/logger.middleware';
 import config from './config/config';
 import db from './data/database';
+import roleRouter from './routes/role.route';
+// import permissionInit from './data/mocks/permissionInit';
+// import roleInit from './data/mocks/roleInit';
+// import userInit from './data/mocks/userInit';
+// import objectInit from './data/mocks/objectInit';
 
 const app = express();
 
 app.use(express.json());
 
 db.on('error', console.error.bind(console, 'Connection to MongoDB error:'));
-db.once('open', () => {
+db.once('open', async () => {
   console.log('✅ Connection to MongoDB is successful');
+  // await permissionInit();
+  // await roleInit();
+  // await objectInit();
+  // await userInit();
 });
 
 app.use(loggerMiddleware);
-// app.use('/api/items', itemRoutes);
+app.use('/api/roles', roleRouter);
 
 app.use(errorHandler); // Error handling middleware should be the last middleware in the stack
 

@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/NemoZon/esgi-myges-api#readme",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.14.1",
     "dotenv": "^16.5.0",
     "eslint": "^9.25.1",
@@ -37,9 +39,11 @@
     "@eslint/js": "^9.25.1",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
+    "bcrypt": "^5.1.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.16.0",
     "mongoose": "^8.13.2",
     "prettier-eslint": "^16.4.1"

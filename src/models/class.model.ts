@@ -16,7 +16,7 @@ const ClassSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Student',
-      required: true
+      default: []
     }
   ]
 });
