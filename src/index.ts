@@ -34,8 +34,6 @@ const start = async (): Promise<void> => {
     }
     console.log('🔗 Connecting to MongoDB...' + config.DB_URL);
 
-    // await mongoose.connect(process.env.DB_URL, {});
-
     app.listen(config.PORT, () => {
       console.log(`🚀 Server started on http://localhost:${config.PORT}`);
     });
